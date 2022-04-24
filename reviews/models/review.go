@@ -6,36 +6,36 @@ const maxLengthInComments = 400
 
 // Review represent an anon review from some website
 type Review struct{
-	Id int 64
+	Id             int 64
 	ProductName    string 
 	Port           string 
-	Price          string 
-	Date           time.Time 
+	Price          string
+	TypeCoin       string 
 	TypeBusiness   string 
+	Observations   string
 	Status         string 
 	DeliveryPeriod string 
 	Quality        string 
 	WayPay         string 
-	Expiration     string
 	IsPort         string
+	Expiration     time.Time
+	CreatedAt      time.Time 
 }
 
 // CreateReviewCMD command to create a new review
 type CreateReviewCMD struct{
-	ProductName    string `json:"productname,omitempty" bson:"productname,omitempty"`
-	Port           string `json:"port,omitempty" bson:"portname,omitempty"`
-	Price          string `json:"price,omitempty" bson:"price,omitempty"`
-	TypeCoin       string `json:"typecoin,omitempty" bson:"typecoin,omitempty"`
-	Date           string `json:"date,omitempty" bson:"date,omitempty"`
-	TypeBusiness   string `json:"typebusiness,omitempty" bson:"typebusiness,omitempty"`
-	Observations   string `json:"observations,omitempty" bson:"observations,omitempty"`
-	Status         string `json:"status,omitempty" bson:"status,omitempty"`
-	DeliveryPeriod string `json:"deliveryperiod,omitempty" bson:"deliveryperiod,omitempty"`
-	Quality        string `json:"quality,omitempty" bson:"quality,omitempty"`
-	WayPay         string `json:"waypay,omitempty" bson:"waypay,omitempty"`
-	Expiration     string `json:"expiration,omitempty" bson:"expiration,omitempty"`
-	IsPort         string `json:"isport,omitempty" bson:"isport,omitempty"`
-
+	ProductName    string `json:"productname,omitempty"`
+	Port           string `json:"port,omitempty"`
+	Price          string `json:"price,omitempty"`
+	TypeCoin       string `json:"typecoin,omitempty"`
+	TypeBusiness   string `json:"typebusiness,omitempty"`
+	Observations   string `json:"observations,omitempty"`
+	Status         string `json:"status,omitempty"`
+	DeliveryPeriod string `json:"deliveryperiod,omitempty"`
+	Quality        string `json:"quality,omitempty"`
+	WayPay         string `json:"waypay,omitempty"`
+	IsPort         string `json:"isport,omitempty"`
+	Expiration     time.Time `json:"expiration,omitempty"`
 }
 
 func (cmd *CreateReviewCMD) validate() error {
